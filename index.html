@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Direct Measurements Calculator</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Source+Sans+Pro:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="/main.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header flex region">
+          <a href="#" class="logo flex">
+            <img class="logo__img" src="/logo.svg" alt="" />
+            <span class="logo__text">Calculator</span>
+          </a>
+          <nav class="navbar">
+            <ul role="list" class="navbar__list flex">
+              <li>
+                <a href="#" title="GitHub">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" title="Telegram">
+                  <i class="fa-brands fa-telegram"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" title="Twitter">
+                  <i class="fa-brands fa-twitter"></i>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="hero bg-dark text-light">
+        <div class="container">
+          <h1 class="hero__title text-center">
+            Direct measurements calculator
+          </h1>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="grid" data-grid-layout="50-50">
+            <div class="table-container">
+              <table>
+                <caption>
+                  measurements
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">
+                      <abbr title="Number">No.</abbr>
+                    </th>
+                    <th scope="col">Values</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+                <tfoot>
+                  <tr>
+                    <th scope="row">#</th>
+                    <td colspan="2">
+                      <form id="form" autocomplete="off">
+                        <div class="form-group" data-form-layout="70-30">
+                          <input
+                            type="number"
+                            name="number"
+                            data-input
+                            required
+                          />
+                          <button type="submit">
+                            <i class="fa-solid fa-paper-plane"></i>
+                          </button>
+                        </div>
+                      </form>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      <abbr title="Average">Avg.</abbr>
+                    </th>
+                    <td>0</td>
+                    <td>
+                      <button>Calculate</button>
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+            <article class="flow">
+              <h2 class="underlined-title">Computed Result</h2>
+              <p>
+                JavaScript (JS) is a lightweight, interpreted, or just-in-time
+                compiled programming language with first-class functions.
+              </p>
+              <p>
+                JavaScript is a prototype-based, multi-paradigm,
+                single-threaded, dynamic language, supporting object-oriented,
+                imperative, and declarative (e.g. functional programming)
+                styles.
+              </p>
+              <p>Read more about <a href="#">JavaScript on MDN</a>.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <article class="flow">
+            <h2 class="underlined-title">Guide</h2>
+            <p>
+              JavaScript is a cross-platform, object-oriented scripting language
+              used to make webpages interactive (e.g., having complex
+              animations, clickable buttons, popup menus, etc.).
+            </p>
+            <p>
+              Core JavaScript can be extended for a variety of purposes by
+              supplementing it with additional objects; for example:
+            </p>
+            <h3>Client-side JavaScript:</h3>
+            <p>
+              Client-side JavaScript extends the core language by supplying
+              objects to control a browser and its Document Object Model (DOM).
+              For example, client-side extensions allow an application to place
+              elements on an HTML form and respond to user events such as mouse
+              clicks, form input, and page navigation.
+            </p>
+            <h3>Server-side JavaScript:</h3>
+            <p>
+              Server-side JavaScript extends the core language by supplying
+              objects relevant to running JavaScript on a server. For example,
+              server-side extensions allow an application to communicate with a
+              database, provide continuity of information from one invocation to
+              another of the application, or perform file manipulations on a
+              server.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="region bg-dark text-light text-center">
+      <div class="container">
+        <p>
+          Made with <i class="fa-solid fa-heart text-accent"></i> by
+          <a href="#">Doston Nabotov</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
