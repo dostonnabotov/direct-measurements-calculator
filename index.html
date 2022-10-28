@@ -84,7 +84,7 @@
         <div class="container">
           <div class="grid" data-grid-layout="50-50">
             <div class="table-container">
-              <table>
+              <table class="table">
                 <caption>
                   measurements
                 </caption>
@@ -107,21 +107,57 @@
                           <input
                             type="number"
                             name="number"
-                            data-input
+                            step=".00001"
+                            id="input-value"
                             required
                           />
                           <button type="submit">
-                            <i class="fa-solid fa-paper-plane"></i>
+                            <i class="fa-solid fa-plus"></i>
                           </button>
                         </div>
                       </form>
                     </td>
                   </tr>
                   <tr>
+                    <th scope="row">Misc</th>
+                    <td>
+                      <label for="sm-scale">Smallest scale:</label>
+                      <input
+                        type="number"
+                        name="sm-scale"
+                        id="sm-scale"
+                        step=".00001"
+                        data-input="sm-scale"
+                      />
+                    </td>
+                    <td>
+                      <div class="form-group">
+                        <label for="coefficient">Coefficient No.:</label>
+                        <input
+                          type="number"
+                          name="coefficient"
+                          id="coefficient"
+                          step=".00001"
+                          data-input="coefficient"
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Type</th>
+                    <td colspan="2">
+                      <select name="types" id="types" data-input="type">
+                        <option></option>
+                        <option value="vernier">Vernier</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
                     <th scope="row">
                       <abbr title="Average">Avg.</abbr>
                     </th>
-                    <td>0</td>
+                    <td data-output="average">0</td>
                     <td>
                       <button>Calculate</button>
                     </td>
@@ -131,17 +167,49 @@
             </div>
             <article class="flow">
               <h2 class="underlined-title">Computed Result</h2>
-              <p>
-                JavaScript (JS) is a lightweight, interpreted, or just-in-time
-                compiled programming language with first-class functions.
-              </p>
-              <p>
-                JavaScript is a prototype-based, multi-paradigm,
-                single-threaded, dynamic language, supporting object-oriented,
-                imperative, and declarative (e.g. functional programming)
-                styles.
-              </p>
-              <p>Read more about <a href="#">JavaScript on MDN</a>.</p>
+              <table class="table-sm">
+                <thead>
+                  <tr>
+                    <th>Result</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Average</td>
+                    <td data-output="average">0</td>
+                  </tr>
+                  <tr>
+                    <td>Standard error</td>
+                    <td data-output="standard-error">0</td>
+                  </tr>
+                  <tr>
+                    <td>Device error</td>
+                    <td data-output="device-error">0</td>
+                  </tr>
+                  <tr>
+                    <td>Random error</td>
+                    <td data-output="random-error">0</td>
+                  </tr>
+                  <tr>
+                    <td>Measurement error</td>
+                    <td data-output="measurement-error">0</td>
+                  </tr>
+                  <tr>
+                    <td>Absolute error</td>
+                    <td data-output="absolute-error">0</td>
+                  </tr>
+                  <tr>
+                    <td>Relative error</td>
+                    <td data-output="relative-error">0</td>
+                  </tr>
+                  <tr>
+                    <td>Result</td>
+                    <td data-output="result">0</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p><b>Warning!</b> The website is still in progress...</p>
             </article>
           </div>
         </div>

@@ -4,17 +4,17 @@ import { v4 as uuidv4 } from "uuid";
 // DOM elements
 const tbodyEl = document.getElementById("tbody");
 const formEl = document.getElementById("form");
-const inputEl = formEl.querySelector('input[type="number"]');
+const inputEl = formEl.querySelector("#input-value");
 
 // data
 let data = [
   {
     id: uuidv4(),
-    value: 24,
+    value: 0,
   },
   {
     id: uuidv4(),
-    value: 25,
+    value: 0,
   },
 ];
 
@@ -32,6 +32,7 @@ formEl.addEventListener("submit", (e) => {
   addNewValue(inputEl);
 });
 
+// Functions
 function addNewValue(input) {
   const value = input.value;
   // validation
@@ -64,7 +65,7 @@ function renderRows() {
     tbodyEl.innerHTML += `
         <tr data-id=${element.id}>
           <th scope="row">${index}</th>
-          <td data-value>${element.value}</td>
+          <td data-input="value">${element.value}</td>
           <td class="form-group" data-form-layout="50-50">
             <button data-action="edit">Edit</button>
             <button data-action="delete">Delete</button>
