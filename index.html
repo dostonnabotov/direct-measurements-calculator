@@ -62,25 +62,20 @@
     <header>
       <div class="container">
         <div class="header flex region">
-          <a href="#" class="logo flex">
+          <a href="/" class="logo flex">
             <img class="logo__img" src="/logo.svg" alt="" />
             <span class="logo__text">Calculator</span>
           </a>
           <nav class="navbar">
             <ul role="list" class="navbar__list flex">
               <li>
-                <a href="#" title="GitHub">
+                <a
+                  href="https://github.com/dostonnabotov/direct-measurements-calculator"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="GitHub"
+                >
                   <i class="fa-brands fa-github"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#" title="Telegram">
-                  <i class="fa-brands fa-telegram"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#" title="Twitter">
-                  <i class="fa-brands fa-twitter"></i>
                 </a>
               </li>
             </ul>
@@ -156,7 +151,7 @@
                             type="number"
                             name="coefficient"
                             id="coefficient"
-                            step=".00001"
+                            step=".0001"
                             data-input="coefficient"
                             placeholder="e.g. 2.145"
                           />
@@ -292,15 +287,45 @@
               should be caused only by the decision of choosing closest value on
               the scale of instrument.
             </p>
+            <hr />
+            <aside class="flow">
+              <p>
+                If you have questions, found some bugs or want to share your
+                feedback, just let me
+                <a
+                  href="https://github.com/dostonnabotov/direct-measurements-calculator/issues"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >know</a
+                >!
+              </p>
+              <p>
+                You can also contribute to the
+                <a
+                  href="https://github.com/dostonnabotov/direct-measurements-calculator/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >project <i class="fa-solid fa-external-link"></i>
+                </a>
+                by opening a new issue and making a pull request. It is much
+                more appreciated!
+              </p>
+            </aside>
           </article>
         </div>
       </section>
     </main>
     <footer class="region bg-dark text-light text-center">
-      <div class="container">
+      <div class="container flow">
         <p>
           Made with <i class="fa-solid fa-heart text-accent"></i> by
-          <a href="#">Doston Nabotov</a>
+          <a
+            href="https://github.com/dostonnabotov/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Doston Nabotov
+          </a>
         </p>
       </div>
     </footer>

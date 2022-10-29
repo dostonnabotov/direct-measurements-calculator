@@ -129,6 +129,11 @@ select {
   background: var(--clr-accent);
 }
 
+:focus {
+  outline: 2px dashed;
+  outline-offset: 0.2em;
+}
+
 body {
   font-family: var(--ff-primary);
   font-weight: var(--fw-400);
@@ -150,6 +155,11 @@ abbr {
 
 section {
   padding-block: clamp(2.5rem, 4vw, 4rem);
+}
+
+article hr {
+  max-width: 60ch;
+  margin-inline: 0;
 }
 
 .container {
@@ -213,6 +223,10 @@ section {
 
 .text-center {
   text-align: center;
+}
+
+.fs-300 {
+  font-size: var(--fs-300);
 }
 
 .header {
