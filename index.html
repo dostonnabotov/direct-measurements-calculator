@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Direct Measurements Calculator</title>
 
+    <!-- Favicon -->
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -21,9 +24,8 @@
       href="favicon/favicon-16x16.png"
     />
     <link rel="manifest" href="/site.webmanifest" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Direct Measurements Calculator</title>
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -31,6 +33,7 @@
       rel="stylesheet"
     />
 
+    <!-- Font Awesome Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
@@ -39,8 +42,21 @@
       referrerpolicy="no-referrer"
     />
 
+    <!-- Custom -->
     <link rel="stylesheet" href="style.css" />
     <script type="module" src="/main.js" defer></script>
+
+    <!-- Mathjax -->
+    <script
+      src="https://polyfill.io/v3/polyfill.min.js?features=es6"
+      defer
+    ></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+      defer
+    ></script>
   </head>
   <body>
     <header>
@@ -82,7 +98,7 @@
       </section>
       <section>
         <div class="container">
-          <div class="grid" data-grid-layout="50-50">
+          <div class="grid" data-grid-layout="50-50" style="gap: 3rem">
             <div class="table-container">
               <table class="table">
                 <caption>
@@ -109,6 +125,7 @@
                             name="number"
                             step=".00001"
                             id="input-value"
+                            placeholder="e.g. 24.567"
                             required
                           />
                           <button type="submit">
@@ -120,36 +137,39 @@
                   </tr>
                   <tr>
                     <th scope="row">Misc</th>
-                    <td>
-                      <label for="sm-scale">Smallest scale:</label>
-                      <input
-                        type="number"
-                        name="sm-scale"
-                        id="sm-scale"
-                        step=".00001"
-                        data-input="sm-scale"
-                      />
-                    </td>
-                    <td>
-                      <div class="form-group">
-                        <label for="coefficient">Coefficient No.:</label>
-                        <input
-                          type="number"
-                          name="coefficient"
-                          id="coefficient"
-                          step=".00001"
-                          data-input="coefficient"
-                        />
+                    <td colspan="2">
+                      <div class="form-group" data-form-layout="50-50">
+                        <div class="form-group" data-form-layout="column">
+                          <label for="sm-scale">smallest scale:</label>
+                          <input
+                            type="number"
+                            name="sm-scale"
+                            id="sm-scale"
+                            step=".0001"
+                            data-input="sm-scale"
+                            placeholder="e.g. 0.02"
+                          />
+                        </div>
+                        <div class="form-group" data-form-layout="column">
+                          <label for="coefficient">coefficient no.:</label>
+                          <input
+                            type="number"
+                            name="coefficient"
+                            id="coefficient"
+                            step=".00001"
+                            data-input="coefficient"
+                            placeholder="e.g. 2.145"
+                          />
+                        </div>
                       </div>
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">Type</th>
+                    <th scope="row"><label for="types">Type</label></th>
                     <td colspan="2">
                       <select name="types" id="types" data-input="type">
-                        <option></option>
-                        <option value="vernier">Vernier</option>
                         <option value="other">Other</option>
+                        <option value="vernier">Vernier</option>
                       </select>
                     </td>
                   </tr>
@@ -159,7 +179,7 @@
                     </th>
                     <td data-output="average">0</td>
                     <td>
-                      <button>Calculate</button>
+                      <button data-action="calculate">Calculate</button>
                     </td>
                   </tr>
                 </tfoot>
@@ -176,40 +196,46 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Average</td>
+                    <td>Average value, \(\bar{x}\)</td>
                     <td data-output="average">0</td>
                   </tr>
                   <tr>
-                    <td>Standard error</td>
+                    <td>Standard error, \(s_{x}\)</td>
                     <td data-output="standard-error">0</td>
                   </tr>
                   <tr>
-                    <td>Device error</td>
+                    <td>Device error, \(\delta_{x}\)</td>
                     <td data-output="device-error">0</td>
                   </tr>
                   <tr>
-                    <td>Random error</td>
+                    <td>Random error, \(\Delta x_{s}\)</td>
                     <td data-output="random-error">0</td>
                   </tr>
                   <tr>
-                    <td>Measurement error</td>
+                    <td>Measurement error, \(\Delta x_{\delta}\)</td>
                     <td data-output="measurement-error">0</td>
                   </tr>
                   <tr>
-                    <td>Absolute error</td>
+                    <td>Absolute error, \(\Delta x\)</td>
                     <td data-output="absolute-error">0</td>
                   </tr>
                   <tr>
-                    <td>Relative error</td>
+                    <td>Relative error, \(\varepsilon\)</td>
                     <td data-output="relative-error">0</td>
-                  </tr>
-                  <tr>
-                    <td>Result</td>
-                    <td data-output="result">0</td>
                   </tr>
                 </tbody>
               </table>
-              <p><b>Warning!</b> The website is still in progress...</p>
+              <p>Final Result:</p>
+              <p>
+                &nbsp;&nbsp;\(x\) =
+                <span data-output="average">0</span> \(\pm\)
+                <span data-output="absolute-error">0</span> [unit],
+              </p>
+              <p>
+                &nbsp;&nbsp;\(\varepsilon\) =
+                <span data-output="relative-error">0</span>%, at
+              </p>
+              <p>&nbsp;&nbsp;\(\beta\) = 0.95</p>
             </article>
           </div>
         </div>
@@ -219,30 +245,52 @@
           <article class="flow">
             <h2 class="underlined-title">Guide</h2>
             <p>
-              JavaScript is a cross-platform, object-oriented scripting language
-              used to make webpages interactive (e.g., having complex
-              animations, clickable buttons, popup menus, etc.).
+              There are two different values that can describe a quantity:
+              <b>true value</b> and <b>real value</b>.
             </p>
             <p>
-              Core JavaScript can be extended for a variety of purposes by
-              supplementing it with additional objects; for example:
+              <b>True value</b> is theoretical measure of something that
+              describes exact value. This value has unlimited precision and none
+              of the errors - exists only in ideal world.
             </p>
-            <h3>Client-side JavaScript:</h3>
             <p>
-              Client-side JavaScript extends the core language by supplying
-              objects to control a browser and its Document Object Model (DOM).
-              For example, client-side extensions allow an application to place
-              elements on an HTML form and respond to user events such as mouse
-              clicks, form input, and page navigation.
+              <b>Real value</b> - experimentally defined value of physical
+              quantity, which is approaching the true value so close that can
+              replace it in calculations. Real value describes quantity with
+              limited accuracy, thus with certain probability and estimated
+              error.
             </p>
-            <h3>Server-side JavaScript:</h3>
+            <p>Sources of error can be divided in three groups:</p>
+            <ol>
+              <li>mistakes</li>
+              <li>
+                systematic errors:
+                <ol>
+                  <li>corrections</li>
+                  <li>device error</li>
+                  <li>object’s error</li>
+                </ol>
+              </li>
+              <li>random errors</li>
+            </ol>
             <p>
-              Server-side JavaScript extends the core language by supplying
-              objects relevant to running JavaScript on a server. For example,
-              server-side extensions allow an application to communicate with a
-              database, provide continuity of information from one invocation to
-              another of the application, or perform file manipulations on a
-              server.
+              In general case all mentioned errors construct the absolute error
+              of the measurement result.
+            </p>
+            <h3>Student Coefficient Table</h3>
+            <img
+              src="/images/student-coefficient-table.png"
+              alt="Student Coefficient Table"
+            />
+            <p>
+              Take into account that for "Random error" we use
+              <b>Students coefficient</b>
+              for our number of measurements, however, "Measurement erro"r is
+              being calculated by using Students coefficient for infinity. This
+              is done due to the fact that we assume that measurement instrument
+              is guaranteed to work with certain accuracy and all the variance
+              should be caused only by the decision of choosing closest value on
+              the scale of instrument.
             </p>
           </article>
         </div>

@@ -1,11 +1,12 @@
 :root {
   --ff-primary: "Open Sans", sans-serif;
   --ff-accent: "Source Sans Pro", sans-serif;
+  --ff-mono: "Courier New", Courier, monospace;
 
   --fw-400: 400;
   --fw-700: 700;
 
-  --fs-300: clamp(0.83rem, calc(0.81rem + 0.13vw), 0.9rem);
+  --fs-300: clamp(0.9rem, calc(0.81rem + 0.13vw), 0.95rem);
   --fs-400: clamp(1rem, calc(0.95rem + 0.24vw), 1.13rem);
   --fs-500: clamp(1.2rem, calc(1.12rem + 0.4vw), 1.41rem);
   --fs-700: clamp(1.44rem, calc(1.32rem + 0.62vw), 1.76rem);
@@ -289,8 +290,8 @@ section {
   border-bottom: 1px solid var(--clr-neutral-200);
 }
 
-.table [data-value] {
-  max-width: 8rem;
+[data-input="value"] {
+  max-width: 5rem;
   overflow: auto;
 }
 
@@ -307,6 +308,11 @@ section {
   display: grid;
   gap: 0.25rem;
   grid-template-columns: var(--form-cols, 1fr);
+  align-items: end;
+}
+
+[data-form-layout="column"] {
+  --form-cols: 1;
 }
 
 [data-form-layout="row"] {
@@ -316,6 +322,10 @@ section {
 
 [data-form-layout="70-30"] {
   --form-cols: 3fr 1fr;
+}
+
+[data-form-layout="33-33-33"] {
+  --form-cols: repeat(3, 1fr);
 }
 
 [data-form-layout="50-25-25"] {
@@ -334,7 +344,13 @@ select {
   border-radius: 0.25em;
   border: 1px solid currentColor;
   font-family: var(--ff-accent);
-  padding: 0.25em 0.5em;
+  padding: 0.25em;
+  line-height: 1.4rem;
+  font-size: var(--fs-300);
+}
+
+input {
+  text-indent: 0.5em;
 }
 
 button {
@@ -345,7 +361,6 @@ button {
 
   background-color: var(--_bg-btn, transparent);
   color: var(--_text-btn, inherit);
-  font-size: var(--fs-300);
 
   cursor: pointer;
 }
@@ -354,7 +369,7 @@ button:active {
   transform: scale(0.97);
 }
 
-:where(button, input, textarea):focus {
+:where(button, input, textarea, select):focus {
   outline: 0;
   box-shadow: 0 0 0 0.25em hsl(216, 82%, 67%);
   border: 1px solid rgb(54, 124, 228);
