@@ -79,18 +79,3 @@ export default class DirectMeasurement {
     `;
   }
 }
-
-const example = new DirectMeasurement(
-  [155.05, 155.2, 155.25, 154.9, 155.5],
-  0.05,
-  2.145
-);
-
-// console.log("------------ Example ------------");
-// console.log("Average Value: " + example.averageValue());
-// console.log("Standard Error: " + example.standardError());
-// console.log("Random Error: " + example.randomError());
-// console.log("Device Error: " + example.deviceError());
-// console.log("Measurement Error: " + example.measurementError());
-// console.log("Absolute Error: " + example.absoluteError());
-// console.log("Result: " + example.calculate());
