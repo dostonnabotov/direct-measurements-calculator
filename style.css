@@ -281,7 +281,7 @@ article hr {
 
 .table {
   width: 100%;
-  min-width: 30rem;
+  min-width: 22rem;
   border: 1px solid var(--clr-neutral-200);
   border-collapse: collapse;
 }
