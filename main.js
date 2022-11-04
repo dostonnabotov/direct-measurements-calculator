@@ -7,6 +7,7 @@ const tbodyEl = document.getElementById("tbody");
 const formEl = document.getElementById("form");
 const inputEl = formEl.querySelector("#input-value");
 const calculateBtn = document.querySelector('[data-action="calculate"]');
+const rangeBtn = document.querySelector('[data-action="range"]');
 
 // data
 let data = [];
@@ -14,6 +15,7 @@ let data = [];
 // custom variables
 let isEditing = false;
 let editingID = "";
+let RANGE = 4;
 
 // Event Listeners
 window.addEventListener("DOMContentLoaded", () => {
@@ -25,13 +27,23 @@ formEl.addEventListener("submit", (e) => {
   addNewValue(inputEl);
 });
 
+rangeBtn.addEventListener("input", (e) => {
+  RANGE = e.target.value;
+  calculation();
+});
+
 calculateBtn.addEventListener("click", () => {
+  calculation();
+});
+
+function calculation() {
   const inputsEl = document.querySelectorAll("[data-input]");
   const outputsEl = document.querySelectorAll("[data-output]");
   let arr = [],
     coefficient = "",
     smallestScale = "",
-    type = "";
+    type = "",
+    range = RANGE;
 
   for (let i of inputsEl) {
     switch (i.dataset.input) {
@@ -52,7 +64,13 @@ calculateBtn.addEventListener("click", () => {
     }
   }
 
-  const direct = new DirectMeasurement(arr, smallestScale, coefficient, type);
+  const direct = new DirectMeasurement(
+    arr,
+    smallestScale,
+    coefficient,
+    type,
+    range
+  );
 
   for (let i of outputsEl) {
     switch (i.dataset.output) {
@@ -84,7 +102,7 @@ calculateBtn.addEventListener("click", () => {
         break;
     }
   }
-});
+}
 
 // Functions
 function addNewValue(input) {
@@ -119,7 +137,7 @@ function renderRows() {
     tbodyEl.innerHTML += `
         <tr data-id=${element.id}>
           <th scope="row">${index}</th>
-          <td data-input="value">${element.value}</td>
+          <td data-input="value" data-set-width>${element.value}</td>
           <td class="form-group" data-form-layout="50-50">
             <button data-action="edit">Edit</button>
             <button data-action="delete">Delete</button>

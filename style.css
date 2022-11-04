@@ -304,9 +304,13 @@ article hr {
   border-bottom: 1px solid var(--clr-neutral-200);
 }
 
-[data-input="value"] {
-  max-width: 5rem;
+[data-set-width] {
+  max-width: var(--_set-width, 5rem);
   overflow: auto;
+}
+
+[data-set-width="lg"] {
+  --_set-width: 10rem;
 }
 
 .table-sm {

@@ -6,6 +6,7 @@
 - [About](#about)
 - [Links](#links)
 - [Contribution](#contribution)
+- [Changelog](#changelog)
 - [License](#license)
 
 ## About
@@ -51,6 +52,10 @@ This app is hosted under the Netlify. You can learn more about it [here](https:/
 Finally, do consider that even fixing a typo is much more appreciated and helps the project grow!
 
 Thank you!
+
+## Changelog
+
+Learn more about [Changelog](https://github.com/dostonnabotov/direct-measurements-calculator/blob/main/CHANGELOG.md)
 
 ## License
 

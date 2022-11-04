@@ -6,13 +6,14 @@ export default class DirectMeasurement {
    * @param {number} smallestScale - the smallest scale value
    * @param {number} coefficientN - the coefficient number, corresponding to the confidence limit, for the number of measurements made
    */
-  constructor(nums, smallestScale, coefficientN, type) {
+  constructor(nums, smallestScale, coefficientN, type, range) {
     this.nums = Array.isArray(nums) ? nums : [];
     this.smallestScale = isNaN(smallestScale) ? 0 : smallestScale;
     this.coefficientN = isNaN(coefficientN) ? 0 : coefficientN;
     this.type = type;
     this.coefficientInf = 1.96;
     this.confidenceLimit = 95;
+    this.range = range;
   }
 
   /**
@@ -21,7 +22,7 @@ export default class DirectMeasurement {
    * @param {number} limit how far you want to limit to, default = 5
    * @returns {number}
    */
-  #shorten(number, limit = 5) {
+  #shorten(number, limit = this.range) {
     if (typeof number === "number") {
       return number.toFixed(limit);
     }
@@ -30,7 +31,7 @@ export default class DirectMeasurement {
   averageValue() {
     if (this.nums.length === 0) return 0;
     const sum = this.nums.reduce((prev, curr) => prev + curr, 0);
-    return this.#shorten(sum / this.nums.length, 3);
+    return this.#shorten(sum / this.nums.length);
   }
 
   standardError() {
