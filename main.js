@@ -44,6 +44,8 @@ function calculation() {
     smallestScale = "",
     type = "",
     range = RANGE;
+    calibration = "";
+    diapason = "";
 
   for (let i of inputsEl) {
     switch (i.dataset.input) {
@@ -59,6 +61,12 @@ function calculation() {
       case "type":
         type = i.value;
         break;
+      case "calibration":
+        calibration = parseFloat(i.value);
+        break;
+      case "diapason":
+        diapason = parseFloat(i.value);
+        break;
       default:
         break;
     }
@@ -69,7 +77,9 @@ function calculation() {
     smallestScale,
     coefficient,
     type,
-    range
+    range,
+    diapason,
+    calibration
   );
 
   for (let i of outputsEl) {

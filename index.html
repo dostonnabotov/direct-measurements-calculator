@@ -149,32 +149,62 @@
                   <tr>
                     <th scope="row">Misc</th>
                     <td colspan="2">
-                      <div class="form-group" data-form-layout="50-50">
-                        <div class="form-group" data-form-layout="column">
-                          <label for="sm-scale">
-                            <abbr title="the smallest">sm</abbr> scale:
-                          </label>
-                          <input
-                            type="number"
-                            name="sm-scale"
-                            id="sm-scale"
-                            step=".0001"
-                            data-input="sm-scale"
-                            placeholder="e.g. 0.02"
-                          />
+                      <div class="flow" style="--flow-space: .25em">
+                        <div class="form-group" data-form-layout="50-50">
+                          <div class="form-group" data-form-layout="column">
+                            <label for="sm-scale">
+                              <abbr title="the smallest">sm</abbr> scale:
+                            </label>
+                            <input
+                              type="number"
+                              name="sm-scale"
+                              id="sm-scale"
+                              step=".0001"
+                              data-input="sm-scale"
+                              placeholder="e.g. 0.02"
+                            />
+                          </div>
+                          <div class="form-group" data-form-layout="column">
+                            <label for="coefficient">
+                              <abbr title="coefficient number">coef. no:</abbr>
+                            </label>
+                            <input
+                              type="number"
+                              name="coefficient"
+                              id="coefficient"
+                              step=".0001"
+                              data-input="coefficient"
+                              placeholder="e.g. 2.145"
+                            />
+                          </div>
                         </div>
-                        <div class="form-group" data-form-layout="column">
-                          <label for="coefficient">
-                            <abbr title="coefficient number">coef. no:</abbr>
-                          </label>
-                          <input
-                            type="number"
-                            name="coefficient"
-                            id="coefficient"
-                            step=".0001"
-                            data-input="coefficient"
-                            placeholder="e.g. 2.145"
-                          />
+                        <div id="electrical-inputs" class="form-group" data-form-layout="50-50">
+                          <div class="form-group" data-form-layout="column">
+                            <label for="calibration">
+                              <abbr title="calibration limit">limit</abbr>:
+                            </label>
+                            <input
+                              type="number"
+                              name="calibration"
+                              id="calibration"
+                              step=".0001"
+                              data-input="calibration"
+                              placeholder="e.g. 0.5"
+                            />
+                          </div>
+                          <div class="form-group" data-form-layout="column">
+                            <label for="diapason">
+                              <abbr title="measured value or diapason of the device">\(X_0\)</abbr>
+                            </label>
+                            <input
+                              type="number"
+                              name="diapason"
+                              id="diapason"
+                              step=".0001"
+                              data-input="diapason"
+                              placeholder="e.g. 150"
+                            />
+                          </div>
                         </div>
                       </div>
                     </td>
@@ -185,6 +215,7 @@
                       <select name="types" id="types" data-input="type">
                         <option value="other">Other</option>
                         <option value="vernier">Vernier</option>
+                        <option value="electrical">Electrical quantity</option>
                       </select>
                     </td>
                   </tr>

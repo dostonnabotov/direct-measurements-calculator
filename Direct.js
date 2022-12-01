@@ -6,7 +6,7 @@ export default class DirectMeasurement {
    * @param {number} smallestScale - the smallest scale value
    * @param {number} coefficientN - the coefficient number, corresponding to the confidence limit, for the number of measurements made
    */
-  constructor(nums, smallestScale, coefficientN, type, range) {
+  constructor(nums, smallestScale, coefficientN, type, range, diapason, calibration) {
     this.nums = Array.isArray(nums) ? nums : [];
     this.smallestScale = isNaN(smallestScale) ? 0 : smallestScale;
     this.coefficientN = isNaN(coefficientN) ? 0 : coefficientN;
@@ -14,6 +14,8 @@ export default class DirectMeasurement {
     this.coefficientInf = 1.96;
     this.confidenceLimit = 95;
     this.range = range;
+    this.diapason = diapason;
+    this.calibration = calibration;
   }
 
   /**
@@ -45,9 +47,13 @@ export default class DirectMeasurement {
   }
 
   deviceError() {
-    return this.#shorten(
-      this.type === "vernier" ? this.smallestScale : this.smallestScale / 2
-    );
+    if (this.type === "vernier") {
+      return this.smallestScale;
+    } else if (this.type === "electrical") {
+      return (this.calibration / 100) * this.diapason;
+    } else {
+      return this.smallestScale / 2;
+    }
   }
 
   randomError() {
