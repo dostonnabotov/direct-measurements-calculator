@@ -134,7 +134,7 @@
                           <input
                             type="number"
                             name="number"
-                            step=".00001"
+                            step="1"
                             id="input-value"
                             placeholder="e.g. 24.567"
                             required
@@ -149,7 +149,7 @@
                   <tr>
                     <th scope="row">Misc</th>
                     <td colspan="2">
-                      <div class="flow" style="--flow-space: .25em">
+                      <div class="flow" style="--flow-space: 0.25em">
                         <div class="form-group" data-form-layout="50-50">
                           <div class="form-group" data-form-layout="column">
                             <label for="sm-scale">
@@ -159,7 +159,7 @@
                               type="number"
                               name="sm-scale"
                               id="sm-scale"
-                              step=".0001"
+                              step=".1"
                               data-input="sm-scale"
                               placeholder="e.g. 0.02"
                             />
@@ -172,13 +172,17 @@
                               type="number"
                               name="coefficient"
                               id="coefficient"
-                              step=".0001"
+                              step=".5"
                               data-input="coefficient"
                               placeholder="e.g. 2.145"
                             />
                           </div>
                         </div>
-                        <div id="electrical-inputs" class="form-group" data-form-layout="50-50">
+                        <div
+                          id="electrical-inputs"
+                          class="form-group"
+                          data-form-layout="50-50"
+                        >
                           <div class="form-group" data-form-layout="column">
                             <label for="calibration">
                               <abbr title="calibration limit">limit</abbr>:
@@ -187,20 +191,23 @@
                               type="number"
                               name="calibration"
                               id="calibration"
-                              step=".0001"
+                              step=".5"
                               data-input="calibration"
                               placeholder="e.g. 0.5"
                             />
                           </div>
                           <div class="form-group" data-form-layout="column">
                             <label for="diapason">
-                              <abbr title="measured value or diapason of the device">\(X_0\)</abbr>
+                              <abbr
+                                title="measured value or diapason of the device"
+                                >\(X_0\)</abbr
+                              >
                             </label>
                             <input
                               type="number"
                               name="diapason"
                               id="diapason"
-                              step=".0001"
+                              step="1"
                               data-input="diapason"
                               placeholder="e.g. 150"
                             />
