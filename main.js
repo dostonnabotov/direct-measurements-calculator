@@ -36,16 +36,18 @@ calculateBtn.addEventListener("click", () => {
   calculation();
 });
 
+// Functions
 function calculation() {
   const inputsEl = document.querySelectorAll("[data-input]");
   const outputsEl = document.querySelectorAll("[data-output]");
-  let arr = [],
-    coefficient = "",
-    smallestScale = "",
-    type = "",
-    range = RANGE;
-    calibration = "";
-    diapason = "";
+
+  let arr = [];
+  let coefficient = "";
+  let smallestScale = "";
+  let type = "";
+  let range = RANGE;
+  let calibration = "";
+  let diapason = "";
 
   for (let i of inputsEl) {
     switch (i.dataset.input) {
@@ -114,7 +116,6 @@ function calculation() {
   }
 }
 
-// Functions
 function addNewValue(input) {
   const value = input.value;
   // validation
@@ -157,12 +158,12 @@ function renderRows() {
 
     const actionBtns = tbodyEl.querySelectorAll("[data-action]");
     actionBtns.forEach((btn) => {
-      btn.addEventListener("click", performActions);
+      btn.addEventListener("click", handleClick);
     });
   });
 }
 
-function performActions(e) {
+function handleClick(e) {
   const parentRow = e.target.parentElement.parentElement;
   const parentId = parentRow.dataset.id;
   const value = parentRow.querySelector('[data-input="value"]');

@@ -1,12 +1,13 @@
 export default class DirectMeasurement {
-  /**
-   * Calculate the direct measurement
-   * @class
-   * @param {array} nums - the array of measurements
-   * @param {number} smallestScale - the smallest scale value
-   * @param {number} coefficientN - the coefficient number, corresponding to the confidence limit, for the number of measurements made
-   */
-  constructor(nums, smallestScale, coefficientN, type, range, diapason, calibration) {
+  constructor(
+    nums,
+    smallestScale,
+    coefficientN,
+    type,
+    range,
+    diapason,
+    calibration
+  ) {
     this.nums = Array.isArray(nums) ? nums : [];
     this.smallestScale = isNaN(smallestScale) ? 0 : smallestScale;
     this.coefficientN = isNaN(coefficientN) ? 0 : coefficientN;
@@ -17,13 +18,6 @@ export default class DirectMeasurement {
     this.diapason = diapason;
     this.calibration = calibration;
   }
-
-  /**
-   * Shorten the provided number
-   * @param {number} number the number you want to shorten
-   * @param {number} limit how far you want to limit to, default = 5
-   * @returns {number}
-   */
   #shorten(number, limit = this.range) {
     if (typeof number === "number") {
       return number.toFixed(limit);
