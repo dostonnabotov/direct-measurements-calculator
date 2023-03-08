@@ -1,0 +1,62 @@
+.form-group {
+  display: grid;
+  gap: 0.25rem;
+  grid-template-columns: var(--form-cols, 1fr);
+  align-items: end;
+}
+
+[data-form-layout="column"] {
+  --form-cols: 1;
+}
+
+[data-form-layout="70-30"] {
+  --form-cols: 3fr 1fr;
+}
+
+[data-form-layout="50-50"] {
+  --form-cols: 1fr 1fr;
+}
+
+button,
+input,
+textarea,
+select {
+  width: 100%;
+  border-radius: 0.25em;
+  border: 1px solid currentColor;
+  font-family: var(--ff-accent);
+  padding: 0.25em;
+  line-height: 1.4rem;
+  font-size: var(--fs-300);
+}
+
+input {
+  text-indent: 0.5em;
+}
+
+button {
+  width: 100%;
+  text-transform: uppercase;
+
+  font-weight: 600;
+
+  background-color: var(--_bg-btn, transparent);
+  color: var(--_text-btn, inherit);
+
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+:where(button, input, textarea, select):focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.25em hsl(216, 82%, 67%);
+  border: 1px solid rgb(54, 124, 228);
+}
+
+button[data-type="accent"] {
+  --_bg-btn: var(--clr-accent);
+  --_text-btn: white;
+}

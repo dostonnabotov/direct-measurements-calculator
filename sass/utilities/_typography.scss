@@ -1,0 +1,28 @@
+.hero__title {
+  font-size: var(--fs-900);
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.underlined-title {
+  position: relative;
+}
+
+.underlined-title::after {
+  content: "";
+  position: absolute;
+  inset: 105% 0 0 0;
+  height: 7px;
+  width: 50px;
+  background-color: var(--clr-accent);
+  border-radius: 100vw;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-center :is(h1, h2, h3, p, blockquote:not([class])),
+:is(h1, h2, h3, p, blockquote:not([class])).text-center {
+  margin-inline: auto;
+}

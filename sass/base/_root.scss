@@ -1,0 +1,21 @@
+:root {
+  --ff-primary: "Open Sans", sans-serif;
+  --ff-accent: "Source Sans Pro", sans-serif;
+
+  --fw-400: 400;
+  --fw-700: 700;
+
+  --fs-300: clamp(0.9rem, calc(0.81rem + 0.13vw), 0.95rem);
+  --fs-400: clamp(1rem, calc(0.95rem + 0.24vw), 1.13rem);
+  --fs-500: clamp(1.2rem, calc(1.12rem + 0.4vw), 1.41rem);
+  --fs-700: clamp(1.44rem, calc(1.32rem + 0.62vw), 1.76rem);
+  --fs-800: clamp(1.73rem, calc(1.54rem + 0.92vw), 2.2rem);
+  --fs-900: clamp(2.07rem, calc(1.81rem + 1.31vw), 2.75rem);
+
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-200: hsl(0, 0%, 80%);
+  --clr-neutral-700: hsl(200, 3%, 17%);
+  --clr-neutral-800: hsl(0, 0%, 8%);
+  --clr-neutral-900: hsl(0, 0%, 0%);
+  --clr-accent: hsl(216, 100%, 33%);
+}
