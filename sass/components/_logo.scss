@@ -1,11 +1,11 @@
 .logo {
-  --gap: 0.4rem;
+  --gap: 0.35rem;
   text-decoration: none;
   color: inherit;
 }
 
 .logo__img {
-  height: clamp(4ex, 3vw, 6ex);
+  height: clamp(4ex, 3vw, 5ex);
   width: auto;
   flex: none;
 }

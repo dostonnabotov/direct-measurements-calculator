@@ -1,7 +1,6 @@
 :root {
   --ff-primary: "Open Sans", sans-serif;
   --ff-accent: "Source Sans Pro", sans-serif;
-  --ff-mono: "Courier New", Courier, monospace;
 
   --fw-400: 400;
   --fw-700: 700;
@@ -14,7 +13,7 @@
   --fs-900: clamp(2.07rem, calc(1.81rem + 1.31vw), 2.75rem);
 
   --clr-neutral-100: hsl(0, 0%, 100%);
-  --clr-neutral-200: hsl(0, 0%, 94%);
+  --clr-neutral-200: hsl(0, 0%, 80%);
   --clr-neutral-700: hsl(200, 3%, 17%);
   --clr-neutral-800: hsl(0, 0%, 8%);
   --clr-neutral-900: hsl(0, 0%, 0%);

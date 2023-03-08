@@ -9,21 +9,8 @@
   --form-cols: 1;
 }
 
-[data-form-layout="row"] {
-  --form-cols: auto 1fr;
-  align-items: end;
-}
-
 [data-form-layout="70-30"] {
   --form-cols: 3fr 1fr;
-}
-
-[data-form-layout="33-33-33"] {
-  --form-cols: repeat(3, 1fr);
-}
-
-[data-form-layout="50-25-25"] {
-  --form-cols: 2fr 1fr 1fr;
 }
 
 [data-form-layout="50-50"] {
