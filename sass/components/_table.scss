@@ -1,11 +1,13 @@
 .table-container {
+  display: grid;
+  gap: 2rem;
   width: 100%;
   overflow-x: auto;
 }
 
 .table {
   width: 100%;
-  min-width: 22rem;
+  min-width: 25rem;
   border: 1px solid var(--clr-neutral-200);
   border-collapse: collapse;
 }
@@ -18,14 +20,15 @@
   text-align: left;
 }
 
-.table :is(th, td) {
+.table th,
+.table td {
   border: 1px solid var(--clr-neutral-200);
   padding-block: clamp(0.5rem, 1vw, 1rem);
   padding-inline: clamp(1rem, 2vw, 2rem);
 }
 
 .table tr {
-  border-bottom: 1px solid var(--clr-neutral-200);
+  border-top: 1px solid var(--clr-neutral-200);
 }
 
 [data-set-width] {

@@ -17,7 +17,7 @@
   --form-cols: 1fr 1fr;
 }
 
-button,
+.button,
 input,
 textarea,
 select {
@@ -34,7 +34,7 @@ input {
   text-indent: 0.5em;
 }
 
-button {
+.button {
   width: 100%;
   text-transform: uppercase;
 
@@ -46,17 +46,17 @@ button {
   cursor: pointer;
 }
 
-button:active {
+.button:active {
   transform: scale(0.97);
 }
 
-:where(button, input, textarea, select):focus {
+:where(.button, input, textarea, select):focus {
   outline: 0;
   box-shadow: 0 0 0 0.25em hsl(216, 82%, 67%);
   border: 1px solid rgb(54, 124, 228);
 }
 
-button[data-type="accent"] {
+.button[data-type="accent"] {
   --_bg-btn: var(--clr-accent);
   --_text-btn: white;
 }

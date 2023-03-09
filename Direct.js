@@ -11,12 +11,12 @@ export default class DirectMeasurement {
     this.nums = Array.isArray(nums) ? nums : [];
     this.smallestScale = isNaN(smallestScale) ? 0 : smallestScale;
     this.coefficientN = isNaN(coefficientN) ? 0 : coefficientN;
+    this.diapason = isNaN(diapason) ? 0 : diapason;
+    this.calibration = isNaN(calibration) ? 0 : calibration;
     this.type = type;
+    this.range = range;
     this.coefficientInf = 1.96;
     this.confidenceLimit = 95;
-    this.range = range;
-    this.diapason = diapason;
-    this.calibration = calibration;
   }
   #shorten(number, limit = this.range) {
     if (typeof number === "number") {

@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Doston Nabotov" />
-    <meta name="keywords" content="direct measurements, calculator, physics" />
+    <meta name="keywords" content="direct measurements calculator, physics" />
     <meta
       name="description"
-      content="Direct Measurements Calculator helps you to easily calculate your measurements and find different error types:"
+      content="Direct Measurements Calculator helps you quickly calculate direct measurement errors"
     />
     <meta property="og:title" content="Direct Measurements Calculator" />
     <meta property="og:type" content="website" />
@@ -111,117 +111,116 @@
         <div class="container">
           <div class="grid" data-grid-layout="50-50" style="gap: 3rem">
             <div class="table-container">
+              <h2 class="underlined-title">Calculations</h2>
               <table class="table">
                 <caption>
-                  measurements
+                  Measurements
                 </caption>
                 <thead>
                   <tr>
-                    <th scope="col">
-                      <abbr title="Number">No.</abbr>
+                    <th>
+                      <abbr title="Index">#</abbr>
                     </th>
-                    <th scope="col">Values</th>
-                    <th scope="col">Actions</th>
+                    <th>Values</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                   </tr>
                 </thead>
                 <tbody id="tbody"></tbody>
                 <tfoot>
                   <tr>
-                    <th scope="row">#</th>
+                    <form id="form" autocomplete="off">
+                      <td colspan="3">
+                        <input
+                          type="number"
+                          name="number"
+                          id="input-value"
+                          placeholder="e.g. 24.567"
+                          step="any"
+                          required
+                        />
+                      </td>
+                      <td>
+                        <button class="button" type="submit">
+                          <i class="fa-solid fa-plus"></i>
+                        </button>
+                      </td>
+                    </form>
+                  </tr>
+                </tfoot>
+              </table>
+
+              <table class="table">
+                <caption>
+                  Settings
+                </caption>
+                <tbody>
+                  <tr>
+                    <td>
+                      <label for="sm-scale">Smallest scale</label>
+                    </td>
                     <td colspan="2">
-                      <form id="form" autocomplete="off">
-                        <div class="form-group" data-form-layout="70-30">
-                          <input
-                            type="number"
-                            name="number"
-                            id="input-value"
-                            placeholder="e.g. 24.567"
-                            step="any"
-                            required
-                          />
-                          <button type="submit">
-                            <i class="fa-solid fa-plus"></i>
-                          </button>
-                        </div>
-                      </form>
+                      <input
+                        type="number"
+                        name="sm-scale"
+                        id="sm-scale"
+                        data-input="sm-scale"
+                        placeholder="e.g. 0.02"
+                        step="any"
+                        min="0"
+                      />
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">Misc</th>
+                    <td>
+                      <label for="coefficient">Coefficient number</label>
+                    </td>
                     <td colspan="2">
-                      <div class="flow" style="--flow-space: 0.25em">
-                        <div class="form-group" data-form-layout="50-50">
-                          <div class="form-group" data-form-layout="column">
-                            <label for="sm-scale">
-                              <abbr title="the smallest">sm</abbr> scale:
-                            </label>
-                            <input
-                              type="number"
-                              name="sm-scale"
-                              id="sm-scale"
-                              data-input="sm-scale"
-                              placeholder="e.g. 0.02"
-                              step="any"
-                              min="0"
-                            />
-                          </div>
-                          <div class="form-group" data-form-layout="column">
-                            <label for="coefficient">
-                              <abbr title="coefficient number">coef. no:</abbr>
-                            </label>
-                            <input
-                              type="number"
-                              name="coefficient"
-                              id="coefficient"
-                              data-input="coefficient"
-                              placeholder="e.g. 2.145"
-                              step="any"
-                              min="0"
-                            />
-                          </div>
-                        </div>
-                        <div
-                          id="electrical-inputs"
-                          class="form-group"
-                          data-form-layout="50-50"
-                        >
-                          <div class="form-group" data-form-layout="column">
-                            <label for="calibration">
-                              <abbr title="calibration limit">limit</abbr>:
-                            </label>
-                            <input
-                              type="number"
-                              name="calibration"
-                              id="calibration"
-                              data-input="calibration"
-                              placeholder="e.g. 0.5"
-                              step="any"
-                              min="0"
-                            />
-                          </div>
-                          <div class="form-group" data-form-layout="column">
-                            <label for="diapason">
-                              <abbr
-                                title="measured value or diapason of the device"
-                                >\(X_0\)</abbr
-                              >
-                            </label>
-                            <input
-                              type="number"
-                              name="diapason"
-                              id="diapason"
-                              data-input="diapason"
-                              placeholder="e.g. 150"
-                              step="any"
-                              min="0"
-                            />
-                          </div>
-                        </div>
-                      </div>
+                      <input
+                        type="number"
+                        name="coefficient"
+                        id="coefficient"
+                        data-input="coefficient"
+                        placeholder="e.g. 2.145"
+                        step="any"
+                        min="0"
+                      />
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row"><label for="types">Type</label></th>
+                    <td>
+                      <label for="calibration">Calibration limit</label>
+                    </td>
+                    <td colspan="2">
+                      <input
+                        type="number"
+                        name="calibration"
+                        id="calibration"
+                        data-input="calibration"
+                        placeholder="e.g. 0.5"
+                        step="any"
+                        min="0"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label for="diapason">Diapason \(X_0\)</label>
+                    </td>
+                    <td colspan="2">
+                      <input
+                        type="number"
+                        name="diapason"
+                        id="diapason"
+                        data-input="diapason"
+                        placeholder="e.g. 150"
+                        step="any"
+                        min="0"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><label for="types">Type</label></td>
                     <td colspan="2">
                       <select name="types" id="types" data-input="type">
                         <option value="other">Other</option>
@@ -231,7 +230,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row"><label for="range">Range</label></th>
+                    <td><label for="range">Range</label></td>
                     <td colspan="2">
                       <input
                         type="range"
@@ -245,16 +244,14 @@
                       />
                     </td>
                   </tr>
-                  <tr style="overflow: hidden">
-                    <th scope="row">
-                      <abbr title="Average">Avg.</abbr>
-                    </th>
-                    <td data-output="average" data-set-width>0</td>
-                    <td>
-                      <button data-action="calculate">Calculate</button>
+                  <tr>
+                    <td colspan="3">
+                      <button class="button" data-action="calculate">
+                        Calculate
+                      </button>
                     </td>
                   </tr>
-                </tfoot>
+                </tbody>
               </table>
             </div>
             <article class="flow">
