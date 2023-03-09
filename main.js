@@ -5,12 +5,12 @@ import DirectMeasurement from "./Direct";
 // DOM elements
 const tbodyEl = document.getElementById("tbody");
 const formEl = document.getElementById("form");
-const inputEl = formEl.querySelector("#input-value");
+const inputEl = document.querySelector("#input-value");
 const calculateBtn = document.querySelector('[data-action="calculate"]');
 const rangeBtn = document.querySelector('[data-action="range"]');
 
 // data
-let data = [];
+let data = [{ id: uuidv4(), value: 24.567 }];
 
 // custom variables
 let isEditing = false;
@@ -126,7 +126,7 @@ function addNewValue(input) {
       if (element.id === editingID) element.value = inputEl.value;
     });
   } else {
-    data.push({ id: uuidv4(), value });
+    data.push({ id: uuidv4(), value: value });
   }
 
   render();
@@ -147,11 +147,17 @@ function renderRows() {
   data.forEach((element, index) => {
     tbodyEl.innerHTML += `
         <tr data-id=${element.id}>
-          <th scope="row">${index}</th>
+          <td>${index}</td>
           <td data-input="value" data-set-width>${element.value}</td>
-          <td class="form-group" data-form-layout="50-50">
-            <button data-action="edit">Edit</button>
-            <button data-action="delete">Delete</button>
+          <td>
+            <button class="button" data-action="edit">
+              <i class="fa-solid fa-edit"></i>
+            </button>
+          </td>
+          <td>
+            <button class="button" data-action="delete">
+              <i class="fa-solid fa-trash"></i>
+            </button>
           </td>
         </tr>
     `;
@@ -164,11 +170,19 @@ function renderRows() {
 }
 
 function handleClick(e) {
-  const parentRow = e.target.parentElement.parentElement;
+  let btn = "";
+  // Check if the target is the button or the icon
+  if (e.target.dataset.action) {
+    btn = e.target;
+  } else {
+    btn = e.target.parentElement;
+  }
+
+  const parentRow = btn.parentElement.parentElement;
   const parentId = parentRow.dataset.id;
   const value = parentRow.querySelector('[data-input="value"]');
 
-  switch (e.target.dataset.action) {
+  switch (btn.dataset.action) {
     case "delete":
       data = data.filter((element) => element.id != parentId);
       render();
