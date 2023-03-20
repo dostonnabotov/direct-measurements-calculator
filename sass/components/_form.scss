@@ -5,18 +5,6 @@
   align-items: end;
 }
 
-[data-form-layout="column"] {
-  --form-cols: 1;
-}
-
-[data-form-layout="70-30"] {
-  --form-cols: 3fr 1fr;
-}
-
-[data-form-layout="50-50"] {
-  --form-cols: 1fr 1fr;
-}
-
 .button,
 input,
 textarea,

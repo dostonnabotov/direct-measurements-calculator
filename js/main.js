@@ -5,7 +5,7 @@ import DirectMeasurement from "./Direct";
 // DOM elements
 const tbodyEl = document.getElementById("tbody");
 const formEl = document.getElementById("form");
-const inputEl = document.querySelector("#input-value");
+const inputEl = document.getElementById("input-value");
 const calculateBtn = document.querySelector('[data-action="calculate"]');
 const rangeBtn = document.querySelector('[data-action="range"]');
 
@@ -49,25 +49,25 @@ function calculation() {
   let calibration = "";
   let diapason = "";
 
-  for (let i of inputsEl) {
-    switch (i.dataset.input) {
+  for (let output of inputsEl) {
+    switch (output.dataset.input) {
       case "value":
-        arr.push(parseFloat(i.innerText));
+        arr.push(parseFloat(output.innerText));
         break;
       case "coefficient":
-        coefficient = parseFloat(i.value);
+        coefficient = parseFloat(output.value);
         break;
       case "sm-scale":
-        smallestScale = parseFloat(i.value);
+        smallestScale = parseFloat(output.value);
         break;
       case "type":
-        type = i.value;
+        type = output.value;
         break;
       case "calibration":
-        calibration = parseFloat(i.value);
+        calibration = parseFloat(output.value);
         break;
       case "diapason":
-        diapason = parseFloat(i.value);
+        diapason = parseFloat(output.value);
         break;
       default:
         break;
@@ -148,7 +148,9 @@ function renderRows() {
     tbodyEl.innerHTML += `
         <tr data-id=${element.id}>
           <td>${index}</td>
-          <td data-input="value" data-set-width>${element.value}</td>
+          <td>
+            <span data-input="value" data-set-width="md">${element.value}</span>
+          </td>
           <td>
             <button class="button" data-action="edit">
               <i class="fa-solid fa-edit"></i>

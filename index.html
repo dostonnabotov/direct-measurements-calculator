@@ -58,10 +58,6 @@
       referrerpolicy="no-referrer"
     />
 
-    <!-- Custom -->
-    <link rel="stylesheet" href="/sass/style.scss" />
-    <script type="module" src="/main.js" defer></script>
-
     <!-- Mathjax -->
     <script
       src="https://polyfill.io/v3/polyfill.min.js?features=es6"
@@ -73,6 +69,10 @@
       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
       defer
     ></script>
+
+    <!-- Custom -->
+    <link rel="stylesheet" href="/sass/style.scss" />
+    <script type="module" src="/js/main.js" defer></script>
   </head>
   <body>
     <header>
@@ -176,7 +176,6 @@
                       <label for="coefficient">Coefficient number</label>
                     </td>
                     <td colspan="2">
-
                       <input
                         type="number"
                         name="coefficient"
@@ -186,7 +185,6 @@
                         step="any"
                         min="0"
                       />
-
                     </td>
                   </tr>
                   <tr>
@@ -194,7 +192,6 @@
                       <label for="calibration">Calibration limit</label>
                     </td>
                     <td colspan="2">
-
                       <input
                         type="number"
                         name="calibration"
@@ -204,7 +201,6 @@
                         step="any"
                         min="0"
                       />
-
                     </td>
                   </tr>
                   <tr>
@@ -260,7 +256,7 @@
             </div>
             <article class="flow">
               <h2 class="underlined-title">Computed Result</h2>
-              <table class="table-sm">
+              <table class="table table-sm">
                 <thead>
                   <tr>
                     <th>Result</th>

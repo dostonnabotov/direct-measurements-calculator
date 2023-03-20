@@ -31,20 +31,33 @@
   border-top: 1px solid var(--clr-neutral-200);
 }
 
-[data-set-width] {
-  max-width: var(--_set-width, 5rem);
-  overflow: auto;
-}
-
-[data-set-width="lg"] {
-  --_set-width: 10rem;
-}
-
 .table-sm {
+  width: unset;
+  border: 0;
   margin-block: 2.5rem;
 }
 
-.table-sm :is(th, td) {
+.table-sm tr {
+  border: 0;
+}
+
+.table-sm th,
+.table-sm td {
   text-align: left;
   padding: 0.25em 1em;
+  border: none;
+}
+
+[data-set-width] {
+  display: block;
+  max-width: var(--max-width);
+  overflow: auto;
+}
+
+[data-set-width="md"] {
+  --max-width: 7.5rem;
+}
+
+[data-set-width="lg"] {
+  --max-width: 10rem;
 }
