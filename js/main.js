@@ -1,4 +1,5 @@
 // import packages
+import "bootstrap";
 import { v4 as uuidv4 } from "uuid";
 import DirectMeasurement from "./Direct";
 
@@ -149,16 +150,16 @@ function renderRows() {
         <tr data-id=${element.id}>
           <td>${index}</td>
           <td>
-            <span data-input="value" data-set-width="md">${element.value}</span>
+            <span data-input="value">${element.value}</span>
           </td>
           <td>
-            <button class="button" data-action="edit">
-              <i class="fa-solid fa-edit"></i>
+            <button class="btn btn-light" data-action="edit">
+              <i class="fas fa-edit"></i>
             </button>
           </td>
           <td>
-            <button class="button" data-action="delete">
-              <i class="fa-solid fa-trash"></i>
+            <button class="btn btn-light" data-action="delete">
+              <i class="fas fa-trash-alt"></i>
             </button>
           </td>
         </tr>
