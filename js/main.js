@@ -5,9 +5,9 @@ import DirectMeasurement from "./Direct";
 
 // DOM elements
 const tbodyEl = document.getElementById("tbody");
-const formEl = document.getElementById("form");
+const measurementsFormEl = document.getElementById("measurements-form");
+const settingsFormEl = document.getElementById("settings-form");
 const inputEl = document.getElementById("input-value");
-const calculateBtn = document.querySelector('[data-action="calculate"]');
 const rangeBtn = document.querySelector('[data-action="range"]');
 
 // data
@@ -23,7 +23,7 @@ window.addEventListener("DOMContentLoaded", () => {
   render();
 });
 
-formEl.addEventListener("submit", (e) => {
+measurementsFormEl.addEventListener("submit", (e) => {
   e.preventDefault();
   addNewValue(inputEl);
 });
@@ -33,7 +33,8 @@ rangeBtn.addEventListener("input", (e) => {
   calculation();
 });
 
-calculateBtn.addEventListener("click", () => {
+settingsFormEl.addEventListener("submit", (e) => {
+  e.preventDefault();
   calculation();
 });
 

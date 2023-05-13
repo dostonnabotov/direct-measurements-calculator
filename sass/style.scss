@@ -44,6 +44,13 @@
 @import "bootstrap/scss/utilities/api";
 
 // Custom styles
+body {
+  display: grid;
+  align-content: start;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
 svg {
   height: var(--svg-size, 3ex);
   width: auto;
