@@ -23,15 +23,13 @@ The Direct Measurements Calculator helps you to easily calculate your measuremen
 
 ## Links
 
-- Website - [Live](https://direct-measurements-calculator.netlify.app/)
-- Code - [Github](https://github.com/dostonnabotov/direct-measurements-calculator)
-- Author - [Doston Nabotov](https://github.com/dostonnabotov/direct-measurements-calculator), also known as _Technophile_
+- Website - [Live](https://direct-measurements-calculator.netlify.app)
 
 ## Contribution
 
 If you want to contribute to this project, you can open a new issue and make a pull request.
 
-This app is run with the help of [Vite JS](https://vitejs.dev/).
+This app is run with [Vite JS](https://vitejs.dev/).
 
 Once you have cloned the repository to your local machine, you can run:
 
